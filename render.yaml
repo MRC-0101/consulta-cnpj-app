@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: consulta-cnpj
+    env: python
+    plan: free
+    branch: main
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn consulta_cnpj:app
+    autoDeploy: true
